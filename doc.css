@@ -1,0 +1,52 @@
+html {
+  background-color: #333333;
+}
+div.main-body {
+  display: grid;
+  color: white;
+  grid-template-columns: minmax(250px, auto) 1fr;
+  grid-gap: 20px;
+  grid-template-areas: "navbar mainContent";
+}
+
+nav#navbar {
+  grid-area: navbar;
+  position: fixed;
+}
+
+nav#navbar a {
+  display: block;
+  border: 1px solid white;
+  padding: 5px;
+  margin: 10px 0;
+  text-decoration: none;
+  color: white;
+}
+
+main#main-doc {
+  grid-area: mainContent;
+}
+
+header {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+code {
+  background-color: #404040;
+  padding: 20px;
+  display: block;
+}
+#last {
+  text-decoration: underline;
+  color: white;
+}
+@media screen and (max-width: 850px) {
+  div.main-body {
+    grid-template-columns: 1fr;
+    grid-template-areas: "navbar" "mainContent";
+  }
+  nav#navbar {
+    position: inherit;
+  }
+}
